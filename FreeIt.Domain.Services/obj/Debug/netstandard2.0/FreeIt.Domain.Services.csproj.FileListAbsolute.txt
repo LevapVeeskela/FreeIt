@@ -1,0 +1,15 @@
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Domain.Services.deps.json
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Domain.Services.dll
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Domain.Services.pdb
+E:\Projects\FreeIt\FreeIt.Domain.Services\obj\Debug\netstandard2.0\FreeIt.Domain.Services.AssemblyInfoInputs.cache
+E:\Projects\FreeIt\FreeIt.Domain.Services\obj\Debug\netstandard2.0\FreeIt.Domain.Services.AssemblyInfo.cs
+E:\Projects\FreeIt\FreeIt.Domain.Services\obj\Debug\netstandard2.0\FreeIt.Domain.Services.dll
+E:\Projects\FreeIt\FreeIt.Domain.Services\obj\Debug\netstandard2.0\FreeIt.Domain.Services.pdb
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Domain.Common.dll
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Domain.Interfaces.dll
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Infrastructure.Interfaces.dll
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Domain.Common.pdb
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Domain.Interfaces.pdb
+E:\Projects\FreeIt\FreeIt.Domain.Services\bin\Debug\netstandard2.0\FreeIt.Infrastructure.Interfaces.pdb
+E:\Projects\FreeIt\FreeIt.Domain.Services\obj\Debug\netstandard2.0\FreeIt.Domain.Services.csprojAssemblyReference.cache
+E:\Projects\FreeIt\FreeIt.Domain.Services\obj\Debug\netstandard2.0\FreeIt.Domain.Services.csproj.CopyComplete

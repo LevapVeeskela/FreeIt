@@ -1,0 +1,8 @@
+E:\Projects\FreeIt\FreeIt.Infrastructure\bin\Debug\netstandard2.0\FreeIt.Infrastructure.deps.json
+E:\Projects\FreeIt\FreeIt.Infrastructure\bin\Debug\netstandard2.0\FreeIt.Infrastructure.dll
+E:\Projects\FreeIt\FreeIt.Infrastructure\bin\Debug\netstandard2.0\FreeIt.Infrastructure.pdb
+E:\Projects\FreeIt\FreeIt.Infrastructure\obj\Debug\netstandard2.0\FreeIt.Infrastructure.AssemblyInfoInputs.cache
+E:\Projects\FreeIt\FreeIt.Infrastructure\obj\Debug\netstandard2.0\FreeIt.Infrastructure.AssemblyInfo.cs
+E:\Projects\FreeIt\FreeIt.Infrastructure\obj\Debug\netstandard2.0\FreeIt.Infrastructure.dll
+E:\Projects\FreeIt\FreeIt.Infrastructure\obj\Debug\netstandard2.0\FreeIt.Infrastructure.pdb
+E:\Projects\FreeIt\FreeIt.Infrastructure\obj\Debug\netstandard2.0\FreeIt.Infrastructure.csprojAssemblyReference.cache

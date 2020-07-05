@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FreeIt.Domain.Common\FreeIt.Domain.Common.csproj" />
+    <ProjectReference Include="..\FreeIt.Domain.Interfaces\FreeIt.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\FreeIt.Infrastructure.Interfaces\FreeIt.Infrastructure.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="LowLevel.FirstWeek\" />
+    <Folder Include="LowLevel.SecondWeek\" />
+    <Folder Include="LowLevel.ThirdWeek\" />
+  </ItemGroup>
+
+</Project>

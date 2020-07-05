@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FreeIt.Domain.Common\FreeIt.Domain.Common.csproj" />
+    <ProjectReference Include="..\FreeIt.Domain.Interfaces\FreeIt.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\FreeIt.Domain.Services\FreeIt.Domain.Services.csproj" />
+    <ProjectReference Include="..\FreeIt.Infrastructure.Interfaces\FreeIt.Infrastructure.Interfaces.csproj" />
+    <ProjectReference Include="..\FreeIt.Infrastructure\FreeIt.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

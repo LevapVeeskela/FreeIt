@@ -1,0 +1,8 @@
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\bin\Debug\netstandard2.0\FreeIt.Domain.Interfaces.deps.json
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\bin\Debug\netstandard2.0\FreeIt.Domain.Interfaces.dll
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\bin\Debug\netstandard2.0\FreeIt.Domain.Interfaces.pdb
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\obj\Debug\netstandard2.0\FreeIt.Domain.Interfaces.AssemblyInfoInputs.cache
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\obj\Debug\netstandard2.0\FreeIt.Domain.Interfaces.AssemblyInfo.cs
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\obj\Debug\netstandard2.0\FreeIt.Domain.Interfaces.dll
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\obj\Debug\netstandard2.0\FreeIt.Domain.Interfaces.pdb
+E:\Projects\FreeIt\FreeIt.Domain.Interfaces\obj\Debug\netstandard2.0\FreeIt.Domain.Interfaces.csprojAssemblyReference.cache

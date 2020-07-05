@@ -1,0 +1,11 @@
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\bin\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.exe
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\bin\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.deps.json
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\bin\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.runtimeconfig.json
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\bin\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.runtimeconfig.dev.json
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\bin\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.dll
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\bin\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.pdb
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\obj\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.csprojAssemblyReference.cache
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\obj\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.AssemblyInfoInputs.cache
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\obj\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.AssemblyInfo.cs
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\obj\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.dll
+E:\Projects\FreeIt\FreeIt.LowLevel.SecondWeek\obj\Debug\netcoreapp3.1\FreeIt.LowLevel.SecondWeek.pdb
