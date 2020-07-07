@@ -18,6 +18,7 @@
         public static class TextErrors
         {
             public const string WrongFormat = "Вы ввели значение не того формата, повторите попытку!";
+            public const string NotOperation = "Вы ввели не операцию, повторите попытку!";
         }
         #endregion
     }

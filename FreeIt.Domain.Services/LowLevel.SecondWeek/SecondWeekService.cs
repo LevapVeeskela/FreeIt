@@ -5,7 +5,7 @@ using FreeIt.Domain.Interfaces.Services;
 
 namespace FreeIt.Domain.Services.LowLevel.SecondWeek
 {
-    public class SecondWeekService : ILowLevelService
+    public class SecondWeekService : ISecondWeekService
     {
         public void Process()
             => Calculate(GetReady()).ToConsole();
@@ -25,7 +25,7 @@ namespace FreeIt.Domain.Services.LowLevel.SecondWeek
 
             while (!@operator.IsOperator())
             {
-                Constants.TextErrors.WrongFormat.ToConsole();
+                Constants.TextErrors.NotOperation.ToConsole();
                 @operator = Constants.Templates.EnterOperation.GetValueFromConsole();
             }
 

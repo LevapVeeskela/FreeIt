@@ -4,7 +4,7 @@ using FreeIt.Domain.Interfaces.Services;
 
 namespace FreeIt.Domain.Services.LowLevel.FirstWeek
 {
-    public class FirstWeekService : ILowLevelService
+    public class FirstWeekService : IFirstWeekService
     {
         public void Process()
             => Calculate().ToConsole();
