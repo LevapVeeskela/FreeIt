@@ -6,7 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FreeIt.Domain.Services\FreeIt.Domain.Services.csproj" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FreeIt.Dependency\FreeIt.Dependency.csproj" />
+    <ProjectReference Include="..\FreeIt.Domain.Services\FreeIt.Domain.Services.csproj" />
+  </ItemGroup>
 </Project>

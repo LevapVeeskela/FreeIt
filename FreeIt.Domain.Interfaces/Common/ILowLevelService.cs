@@ -1,4 +1,4 @@
-﻿namespace FreeIt.Domain.Interfaces.Services
+﻿namespace FreeIt.Domain.Interfaces.Common
 {
     public interface ILowLevelService
     {
