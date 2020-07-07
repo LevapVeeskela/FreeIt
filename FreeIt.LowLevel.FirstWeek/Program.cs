@@ -13,7 +13,7 @@ namespace FreeIt.LowLevel.FirstWeek
         {
             var service = new FirstWeekService();
 
-            service.Calculate().ToConsole();
+            service.Process();
 
             Console.ReadKey();
         }

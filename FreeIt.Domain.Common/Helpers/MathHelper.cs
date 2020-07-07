@@ -5,6 +5,24 @@ namespace FreeIt.Domain.Common.Helpers
 {
     public static class MathHelper
     {
+        public static double Calculate(double firstValue, double secondValue, string @operator)
+        {
+            const string minus = "-";
+            const string multiplication = "*";
+            const string division = "/";
+
+            switch (@operator)
+            {
+                case minus:
+                    return firstValue - secondValue;
+                case multiplication:
+                    return firstValue * secondValue;
+                case division:
+                    return firstValue / secondValue;
+                default: return firstValue + secondValue;
+            }
+        }
+
         public static long CalculateMultiply(params int[] args)
         {
             var tempArgsList = args.ToList();
