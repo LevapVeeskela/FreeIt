@@ -1,6 +1,6 @@
 ﻿using FreeIt.Domain.Services.LowLevel.FirstWeek;
 using System;
-using FreeIt.Domain.Common.Helpers;
+using FreeIt.Domain.Common.Extensions;
 
 namespace FreeIt.LowLevel.FirstWeek
 {
@@ -12,7 +12,9 @@ namespace FreeIt.LowLevel.FirstWeek
         private static void Execute()
         {
             var service = new FirstWeekService();
+
             service.Calculate().DoubleToConsole();
+
             Console.ReadKey();
         }
     }

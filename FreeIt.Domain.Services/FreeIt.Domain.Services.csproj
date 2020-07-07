@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="LowLevel.SecondWeek\" />
-    <Folder Include="LowLevel.ThirdWeek\" />
   </ItemGroup>
 
 </Project>
