@@ -1,7 +1,0 @@
-E:\Projects\FreeIt\FreeIt.Domain.Common\bin\Debug\netstandard2.0\FreeIt.Domain.Common.deps.json
-E:\Projects\FreeIt\FreeIt.Domain.Common\bin\Debug\netstandard2.0\FreeIt.Domain.Common.dll
-E:\Projects\FreeIt\FreeIt.Domain.Common\bin\Debug\netstandard2.0\FreeIt.Domain.Common.pdb
-E:\Projects\FreeIt\FreeIt.Domain.Common\obj\Debug\netstandard2.0\FreeIt.Domain.Common.AssemblyInfoInputs.cache
-E:\Projects\FreeIt\FreeIt.Domain.Common\obj\Debug\netstandard2.0\FreeIt.Domain.Common.AssemblyInfo.cs
-E:\Projects\FreeIt\FreeIt.Domain.Common\obj\Debug\netstandard2.0\FreeIt.Domain.Common.dll
-E:\Projects\FreeIt\FreeIt.Domain.Common\obj\Debug\netstandard2.0\FreeIt.Domain.Common.pdb
