@@ -8,7 +8,7 @@ namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
     public class ThirdWeekService
     {
         public void Process()
-            => Calculate(GetReady().ToArray()).LongToConsole();
+            => Calculate(GetReady().ToArray()).ToConsole();
 
         private List<int> GetReady()
         {
@@ -16,8 +16,8 @@ namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
 
             int count;
 
-            while (!int.TryParse(Constants.Templates.EnterCountValues.ReadValueFromConsole(), out count))
-                Constants.TextErrors.WrongFormat.StringToConsole();
+            while (!int.TryParse(Constants.Templates.EnterCountValues.GetValueFromConsole(), out count))
+                Constants.TextErrors.WrongFormat.ToConsole();
 
             for (int i = 0; i < count; i++)
             {
@@ -25,8 +25,8 @@ namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
 
                 int value;
 
-                while (!int.TryParse(text.ReadValueFromConsole(), out value))
-                    Constants.TextErrors.WrongFormat.StringToConsole();
+                while (!int.TryParse(text.GetValueFromConsole(), out value))
+                    Constants.TextErrors.WrongFormat.ToConsole();
 
                 args.Add(value);
             }
