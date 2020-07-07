@@ -6,7 +6,7 @@ using FreeIt.Domain.Interfaces.Services;
 
 namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
 {
-    public class ThirdWeekService : ILowLevelService
+    public class ThirdWeekService : IThirdWeekService
     {
         public void Process()
             => Calculate(GetReady().ToArray()).ToConsole();
