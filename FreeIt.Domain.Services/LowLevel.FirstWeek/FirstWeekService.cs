@@ -9,7 +9,7 @@ namespace FreeIt.Domain.Services.LowLevel.FirstWeek
         public void Process()
             => Calculate().ToConsole();
 
-        double Calculate()
+        private double Calculate()
             => (Math.Pow(6, 2) - 1) / 2;
     }
 }

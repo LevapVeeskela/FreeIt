@@ -38,14 +38,14 @@ namespace FreeIt.Domain.Common.Helpers
             {
                 if (Math.Abs(result) > 0)
                 {
-                    result = Multiple(result, tempArgsList.First());
+                    result = Multiple(result, Math.Abs(tempArgsList.First()));
 
                     tempArgsList.Remove(tempArgsList.First());
 
                     continue;
                 }
 
-                result = Multiple(tempArgsList.FirstOrDefault(), tempArgsList.LastOrDefault());
+                result = Multiple(Math.Abs(tempArgsList.FirstOrDefault()), Math.Abs(tempArgsList.LastOrDefault()));
 
                 tempArgsList.Remove(tempArgsList.FirstOrDefault());
 

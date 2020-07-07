@@ -32,7 +32,7 @@ namespace FreeIt.Domain.Services.LowLevel.SecondWeek
             return (arg1, arg2, @operator);
         }
 
-        double Calculate((double arg1, double arg2, string @operator) tuple)
+        private double Calculate((double arg1, double arg2, string @operator) tuple)
             => MathHelper.Calculate(tuple.arg1, tuple.arg2, tuple.@operator);
     }
 }
