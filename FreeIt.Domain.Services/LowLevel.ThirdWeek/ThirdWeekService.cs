@@ -2,10 +2,11 @@
 using FreeIt.Domain.Common.Constants;
 using FreeIt.Domain.Common.Extensions;
 using FreeIt.Domain.Common.Helpers;
+using FreeIt.Domain.Interfaces.Services;
 
 namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
 {
-    public class ThirdWeekService
+    public class ThirdWeekService : ILowLevelService
     {
         public void Process()
             => Calculate(GetReady().ToArray()).ToConsole();

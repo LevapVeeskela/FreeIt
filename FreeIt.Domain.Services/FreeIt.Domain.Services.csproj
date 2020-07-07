@@ -10,8 +10,4 @@
     <ProjectReference Include="..\FreeIt.Infrastructure.Interfaces\FreeIt.Infrastructure.Interfaces.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="LowLevel.SecondWeek\" />
-  </ItemGroup>
-
 </Project>

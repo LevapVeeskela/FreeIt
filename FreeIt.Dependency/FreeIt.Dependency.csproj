@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,6 +10,14 @@
     <ProjectReference Include="..\FreeIt.Domain.Services\FreeIt.Domain.Services.csproj" />
     <ProjectReference Include="..\FreeIt.Infrastructure.Interfaces\FreeIt.Infrastructure.Interfaces.csproj" />
     <ProjectReference Include="..\FreeIt.Infrastructure\FreeIt.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Configuration\IoC\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
   </ItemGroup>
 
 </Project>

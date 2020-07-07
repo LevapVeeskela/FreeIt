@@ -7,6 +7,7 @@
         {
             public const string EnterCountValues = "Введите кол-во значений которые будут перемножены: ";
             public const string EnterValue = "Введите значение: ";
+            public const string EnterOperation = "Введите операцию: +, -, /, * ";
             public const string EnterValueTemplate = "Введите {0} значение:";
             public const string StringToConsole = "Результат выполнения: {0}";
             public const string NumberToConsole = "Результат вычисления: {0}";
