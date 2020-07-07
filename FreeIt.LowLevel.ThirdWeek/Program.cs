@@ -8,7 +8,7 @@ namespace FreeIt.LowLevel.ThirdWeek
         static void Main(string[] args)
             => Execute();
 
-        private static void Execute()
+        static void Execute()
         {
             var service = new ThirdWeekService();
 

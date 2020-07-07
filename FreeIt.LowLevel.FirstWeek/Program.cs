@@ -9,11 +9,11 @@ namespace FreeIt.LowLevel.FirstWeek
         static void Main(string[] args)
            => Execute();
         
-        private static void Execute()
+        static void Execute()
         {
             var service = new FirstWeekService();
 
-            service.Calculate().DoubleToConsole();
+            service.Calculate().ToConsole();
 
             Console.ReadKey();
         }

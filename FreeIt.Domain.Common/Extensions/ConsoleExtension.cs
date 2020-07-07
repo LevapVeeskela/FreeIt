@@ -9,37 +9,37 @@ namespace FreeIt.Domain.Common.Extensions
         static ConsoleExtension()
             => Console.OutputEncoding = Encoding.UTF8;
 
-        public static string ReadValueFromConsole(this string template)
+        public static string GetValueFromConsole(this string template)
         {
             Console.WriteLine(template);
             return Console.ReadLine();
         }
 
-        public static void StringToConsole(this string row)
+        public static void ToConsole(this string row)
             => Console.WriteLine(row); 
 
-        public static void StringToConsole(this string row, string template)
+        public static void ToConsole(this string row, string template)
             => Console.WriteLine(template, row);
 
-        public static void StringToConsole(this string row, string template, params object[] args)
+        public static void ToConsole(this string row, string template, params object[] args)
             => Console.WriteLine(template, row, args);
 
-        public static void IntToConsole(this int number, string template = Templates.NumberToConsole)
+        public static void ToConsole(this int number, string template = Templates.NumberToConsole)
             => Console.WriteLine(template, number);
 
-        public static void IntToConsole(this int number, string template, params object[] args)
+        public static void ToConsole(this int number, string template, params object[] args)
             => Console.WriteLine(template, number, args);
 
-        public static void DoubleToConsole(this double number, string template = Templates.NumberToConsole)
+        public static void ToConsole(this double number, string template = Templates.NumberToConsole)
             => Console.WriteLine(template, number);
 
-        public static void DoubleToConsole(this double number, string template, params object[] args)
+        public static void ToConsole(this double number, string template, params object[] args)
             => Console.WriteLine(template, number, args);
 
-        public static void LongToConsole(this long number, string template = Templates.NumberToConsole)
+        public static void ToConsole(this long number, string template = Templates.NumberToConsole)
             => Console.WriteLine(template, number);
 
-        public static void LongToConsole(this long number, string template, params object[] args)
+        public static void ToConsole(this long number, string template, params object[] args)
             => Console.WriteLine(template, number, args);
     }
 }
