@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="LowLevel.FirstWeek\" />
     <Folder Include="LowLevel.SecondWeek\" />
     <Folder Include="LowLevel.ThirdWeek\" />
   </ItemGroup>

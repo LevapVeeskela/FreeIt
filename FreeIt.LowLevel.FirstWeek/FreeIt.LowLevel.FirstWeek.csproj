@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FreeIt.Domain.Common\FreeIt.Domain.Common.csproj" />
+    <ProjectReference Include="..\FreeIt.Domain.Services\FreeIt.Domain.Services.csproj" />
+  </ItemGroup>
+
 </Project>
