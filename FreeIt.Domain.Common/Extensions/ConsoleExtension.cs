@@ -2,11 +2,11 @@
 using System.Text;
 using static FreeIt.Domain.Common.Constants.Constants;
 
-namespace FreeIt.Domain.Common.Helpers
+namespace FreeIt.Domain.Common.Extensions
 {
-    public static class ConsoleHelper
+    public static class ConsoleExtension
     {
-        static ConsoleHelper()
+        static ConsoleExtension()
             => Console.OutputEncoding = Encoding.UTF8;
 
         public static string ReadValueFromConsole(this string template)
@@ -15,7 +15,10 @@ namespace FreeIt.Domain.Common.Helpers
             return Console.ReadLine();
         }
 
-        public static void StringToConsole(this string row, string template = Templates.StringToConsole)
+        public static void StringToConsole(this string row)
+            => Console.WriteLine(row); 
+
+        public static void StringToConsole(this string row, string template)
             => Console.WriteLine(template, row);
 
         public static void StringToConsole(this string row, string template, params object[] args)
@@ -31,6 +34,12 @@ namespace FreeIt.Domain.Common.Helpers
             => Console.WriteLine(template, number);
 
         public static void DoubleToConsole(this double number, string template, params object[] args)
+            => Console.WriteLine(template, number, args);
+
+        public static void LongToConsole(this long number, string template = Templates.NumberToConsole)
+            => Console.WriteLine(template, number);
+
+        public static void LongToConsole(this long number, string template, params object[] args)
             => Console.WriteLine(template, number, args);
     }
 }
