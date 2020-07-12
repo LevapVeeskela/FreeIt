@@ -7,7 +7,10 @@ namespace FreeIt.Domain.Common.Extensions
     public static class ConsoleExtension
     {
         static ConsoleExtension()
-            => Console.OutputEncoding = Encoding.UTF8;
+        {
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
+        }
 
         public static string GetValueFromConsole(this string template)
         {
