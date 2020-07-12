@@ -32,7 +32,6 @@ namespace FreeIt.LowLevel.FirstWeek
             _serviceProvider = services.BuildServiceProvider();
         }
 
-
         static void DisposeServices()
         {
             if (_serviceProvider == null)
