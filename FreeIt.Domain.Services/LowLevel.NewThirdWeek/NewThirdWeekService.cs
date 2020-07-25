@@ -4,9 +4,9 @@ using FreeIt.Domain.Common.Extensions;
 using FreeIt.Domain.Common.Helpers;
 using FreeIt.Domain.Interfaces.Services;
 
-namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
+namespace FreeIt.Domain.Services.LowLevel.NewThirdWeek
 {
-    public class ThirdWeekService : IThirdWeekService
+    public class NewThirdWeekService : INewThirdWeekService
     {
         public void Process()
             => Calculate(GetReady().ToArray()).ToConsole();
@@ -17,7 +17,7 @@ namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
 
             int count;
 
-            while (!int.TryParse(Constants.Templates.EnterCountValues.GetValueFromConsole(), out count))
+            while (!int.TryParse(Constants.Templates.EnterCountForPlusValues.GetValueFromConsole(), out count))
                 Constants.TextErrors.WrongFormat.ToConsole();
 
             for (int i = 0; i < count; i++)
@@ -36,6 +36,6 @@ namespace FreeIt.Domain.Services.LowLevel.ThirdWeek
         }
 
         private long Calculate(params int[] args)
-            => MathHelper.Calculate(MathHelper.Multiple, args);
+            => MathHelper.Calculate(MathHelper.AddInColumn, args);
     }
 }

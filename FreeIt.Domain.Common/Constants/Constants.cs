@@ -6,6 +6,7 @@
         public static class Templates
         {
             public const string EnterCountValues = "Введите кол-во значений которые будут перемножены: ";
+            public const string EnterCountForPlusValues = "Введите кол-во значений которые будут сложены: ";
             public const string EnterValue = "Введите значение: ";
             public const string EnterOperation = "Введите операцию: +, -, /, * ";
             public const string EnterValueTemplate = "Введите {0} значение:";
