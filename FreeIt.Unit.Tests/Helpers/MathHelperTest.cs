@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Linq;
+using System.Reflection.Metadata;
 using FreeIt.Domain.Common.Helpers;
 using Xunit;
 
@@ -36,7 +37,29 @@ namespace FreeIt.Unit.Tests.Helpers
             tempValues.Remove(result);
 
             // Act
-            var resultCalculate = MathHelper.CalculateMultiply(tempValues.ToArray());
+            var resultCalculate = MathHelper.Calculate(MathHelper.Multiple, tempValues.ToArray());
+
+            // Assert
+            Assert.Equal(resultCalculate, result);
+            Assert.IsType<long>(resultCalculate);
+            Assert.NotEqual(0, resultCalculate);
+        }
+        
+        [Theory]
+        [InlineData(1, 2, 3)]
+        [InlineData(4, 6, 10)]
+        [InlineData(200, 200, 400)]
+        [InlineData(56, 1234, 1290)]
+        [InlineData(100, 300, 400, 800)]
+        public void CalculateAdditionTestShouldSucceed(params int[] args)
+        {
+            // Arrange
+            var result = args.LastOrDefault();
+            var tempValues = args.ToList();
+            tempValues.Remove(result);
+
+            // Act
+            var resultCalculate = MathHelper.Calculate(MathHelper.AddInColumn, tempValues.ToArray());
 
             // Assert
             Assert.Equal(resultCalculate, result);
