@@ -11,27 +11,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infrastructure", "2 - I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - WebApplcation", "3 - WebApplcation", "{C6AAEB51-6FEA-4963-9101-0F5521C2EF22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.Domain.Common", "FreeIt.Domain.Common\FreeIt.Domain.Common.csproj", "{EAD7C2F5-45FE-47CC-B86B-8DB39FF19C90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.Domain.Common", "FreeIt.Domain.Common\FreeIt.Domain.Common.csproj", "{EAD7C2F5-45FE-47CC-B86B-8DB39FF19C90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.Domain.Services", "FreeIt.Domain.Services\FreeIt.Domain.Services.csproj", "{154B6F69-4213-421B-BF1C-0D34C30DC2AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.Domain.Services", "FreeIt.Domain.Services\FreeIt.Domain.Services.csproj", "{154B6F69-4213-421B-BF1C-0D34C30DC2AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.Dependency", "FreeIt.Dependency\FreeIt.Dependency.csproj", "{6D7545F3-09D5-44D2-A128-67517F917BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.Dependency", "FreeIt.Dependency\FreeIt.Dependency.csproj", "{6D7545F3-09D5-44D2-A128-67517F917BDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.Infrastructure", "FreeIt.Infrastructure\FreeIt.Infrastructure.csproj", "{CF230CB9-8D6B-41FA-A928-0EAC0387DD06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.Infrastructure", "FreeIt.Infrastructure\FreeIt.Infrastructure.csproj", "{CF230CB9-8D6B-41FA-A928-0EAC0387DD06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.Infrastructure.Interfaces", "FreeIt.Infrastructure.Interfaces\FreeIt.Infrastructure.Interfaces.csproj", "{E55E8300-2A94-4DA9-8756-FFC9E9B989B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.Infrastructure.Interfaces", "FreeIt.Infrastructure.Interfaces\FreeIt.Infrastructure.Interfaces.csproj", "{E55E8300-2A94-4DA9-8756-FFC9E9B989B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 - Tests", "7 - Tests", "{3D0DD325-97B6-4321-B911-654E8C9DFAFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.Unit.Tests", "FreeIt.Unit.Tests\FreeIt.Unit.Tests.csproj", "{329D8557-5F19-4C40-BF72-5C168430D9B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.Unit.Tests", "FreeIt.Unit.Tests\FreeIt.Unit.Tests.csproj", "{329D8557-5F19-4C40-BF72-5C168430D9B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.LowLevel.FirstWeek", "FreeIt.LowLevel.FirstWeek\FreeIt.LowLevel.FirstWeek.csproj", "{8A69187A-432D-4483-ABB3-4AAEB1F1DB15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.LowLevel.FirstWeek", "FreeIt.LowLevel.FirstWeek\FreeIt.LowLevel.FirstWeek.csproj", "{8A69187A-432D-4483-ABB3-4AAEB1F1DB15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.LowLevel.SecondWeek", "FreeIt.LowLevel.SecondWeek\FreeIt.LowLevel.SecondWeek.csproj", "{F0F2EA5F-247F-42CC-A386-520F3049D742}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.LowLevel.SecondWeek", "FreeIt.LowLevel.SecondWeek\FreeIt.LowLevel.SecondWeek.csproj", "{F0F2EA5F-247F-42CC-A386-520F3049D742}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.LowLevel.ThirdWeek", "FreeIt.LowLevel.ThirdWeek\FreeIt.LowLevel.ThirdWeek.csproj", "{A3CBAC72-A405-477D-AA5C-FCB6399DC669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.LowLevel.ThirdWeek", "FreeIt.LowLevel.ThirdWeek\FreeIt.LowLevel.ThirdWeek.csproj", "{A3CBAC72-A405-477D-AA5C-FCB6399DC669}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.Domain.Interfaces", "FreeIt.Domain.Interfaces\FreeIt.Domain.Interfaces.csproj", "{FB191DB6-88C9-4002-8D96-C3328DA578D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeIt.Domain.Interfaces", "FreeIt.Domain.Interfaces\FreeIt.Domain.Interfaces.csproj", "{FB191DB6-88C9-4002-8D96-C3328DA578D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeIt.LowLevel.NewThirdWeek", "FreeIt.LowLevel.NewThirdWeek\FreeIt.LowLevel.NewThirdWeek.csproj", "{BAD1201D-6B3A-49E1-B566-CF30EF03B507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,6 +81,10 @@ Global
 		{FB191DB6-88C9-4002-8D96-C3328DA578D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB191DB6-88C9-4002-8D96-C3328DA578D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB191DB6-88C9-4002-8D96-C3328DA578D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD1201D-6B3A-49E1-B566-CF30EF03B507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD1201D-6B3A-49E1-B566-CF30EF03B507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD1201D-6B3A-49E1-B566-CF30EF03B507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD1201D-6B3A-49E1-B566-CF30EF03B507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{F0F2EA5F-247F-42CC-A386-520F3049D742} = {C6AAEB51-6FEA-4963-9101-0F5521C2EF22}
 		{A3CBAC72-A405-477D-AA5C-FCB6399DC669} = {C6AAEB51-6FEA-4963-9101-0F5521C2EF22}
 		{FB191DB6-88C9-4002-8D96-C3328DA578D3} = {63B3AB81-1E77-44E8-8DF6-42F4097C7489}
+		{BAD1201D-6B3A-49E1-B566-CF30EF03B507} = {C6AAEB51-6FEA-4963-9101-0F5521C2EF22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {90233850-6454-4F95-BA5C-10D865935C31}
