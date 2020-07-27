@@ -19,7 +19,7 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
         
         public async Task Process()
         {
-            await _millionaireClient.GetAsync(new GetQuestionRequest
+            var data = await _millionaireClient.GetAsync(new GetQuestionRequest
             {
                 QType = LevelDifficulty.Easy,
                 Count = 2

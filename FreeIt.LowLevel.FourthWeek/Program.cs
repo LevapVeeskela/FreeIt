@@ -6,6 +6,7 @@ using FreeIt.Dependency.Configuration.IoC;
 using FreeIt.Domain.Common.Enums;
 using FreeIt.Domain.Common.Models.Requests.Millionaire;
 using FreeIt.Domain.Interfaces.Services.External;
+using System.Threading.Tasks;
 
 namespace FreeIt.LowLevel.FourthWeek
 {
@@ -13,10 +14,10 @@ namespace FreeIt.LowLevel.FourthWeek
     {
         private static IServiceProvider _serviceProvider;
 
-        static void Main(string[] args)
-            => Execute();
+        static async Task Main(string[] args)
+            => await Execute();
 
-        static async void Execute()
+        static async Task Execute()
         {
             RegisterServices(new ServiceCollection());
 
