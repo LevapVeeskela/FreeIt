@@ -1,4 +1,6 @@
-﻿namespace FreeIt.Domain.Common.Constants
+﻿using System.Data;
+
+namespace FreeIt.Domain.Common.Constants
 {
     public static class Constants
     {
@@ -20,6 +22,23 @@
         {
             public const string WrongFormat = "Вы ввели значение не того формата, повторите попытку!";
             public const string NotOperation = "Вы ввели не операцию, повторите попытку!";
+        }
+        #endregion
+
+        #region Quiz
+        public static class Quiz
+        {
+            public const string LifeIsPornConnection = "https://engine.lifeis.porn";
+            public const string Lip2XyzConnection = "https://lip2.xyz";
+            public const string ScriptMillionaire = "millionaire.php";
+        }
+        #endregion
+
+        #region QueryTemplates
+        public static class QueryTemplates
+        {
+            public static string MillionaireRequestQueryTemplate
+                = "{0}/api/{1}?qType={2}&count={3}&apikey={4}";
         }
         #endregion
     }
