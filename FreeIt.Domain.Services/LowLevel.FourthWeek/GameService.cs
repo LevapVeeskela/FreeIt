@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using FreeIt.Domain.Common.Enums;
@@ -17,8 +18,6 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
 {
     public class GameService : IGameService
     {
-        static object locker = new object();
-
         /// <summary>
         /// Так как Api отдаёт рандомные вопросы, есть шанс получить предыдущий
         /// </summary>
@@ -65,47 +64,47 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
             for (CurrentStep = 1; CurrentStep <= 15; CurrentStep++)
             {
                 CurrentDbModel = await GetReadyQuestion(CurrentStep);
-                lock (locker)
+
+                new string('-', 100).ToConsole();
+                string.Format(Templates.NumberQuestionTemplate, CurrentStep).ToConsole();
+
+                CurrentDbModel.Question.ToConsole();
+                var questions = CurrentDbModel.Answers.ToList().Mixing();
+                var hisAnswer = String.Join(", ", questions.Select((_, index) => $"{index + 1}. {_}"))
+                    .GetValueFromConsole();
+
+                if (CurrentStep == 5 || CurrentStep == 10)
                 {
-                    new string('-', 100).ToConsole();
-                    string.Format(Templates.NumberQuestionTemplate, CurrentStep).ToConsole();
-                    CurrentDbModel.Question.ToConsole();
-                    var questions = CurrentDbModel.Answers.ToList().Mixing();
-                    var hisAnswer = String.Join(", ", questions.Select((_, index) => $"{index + 1}. {_}"))
-                        .GetValueFromConsole();
-
-                    if (CurrentStep == 5 || CurrentStep == 10)
-                    {
-                        FireproofPrize = SwitchHelper.GetPrizeSum(CurrentStep);
-                        string.Format(Templates.FireproofPrizeTemplate, FireproofPrize).ToConsole();
-                    }
-
-                    if (int.TryParse(hisAnswer, out var result) && result == 5)
-                    {
-                        FireproofPrize = TempPrize;
-                        return;
-                    }
-
-                    var isTruth = CurrentDbModel.Answers.FirstOrDefault().Equals(questions.ToArray()[result - 1]);
-
-                    if (isTruth)
-                    {
-                        TempPrize = SwitchHelper.GetPrizeSum(CurrentStep);
-                        Quiz.TrueAnswer.ToConsole();
-                    }
-                    else
-                    {
-                        string.Format(Templates.TrueAnswerTemplate,CurrentDbModel.Answers.FirstOrDefault()).ToConsole();
-                        return;
-                    }
-
-                    if (isTruth && CurrentStep == 15)
-                    {
-                        FireproofPrize = TempPrize = SwitchHelper.GetPrizeSum(CurrentStep);
-                        Quiz.Winner.ToConsole();
-                    }
-                   
+                    FireproofPrize = SwitchHelper.GetPrizeSum(CurrentStep);
+                    string.Format(Templates.FireproofPrizeTemplate, FireproofPrize).ToConsole();
                 }
+
+                if (int.TryParse(hisAnswer, out var result) && result == 5)
+                {
+                    FireproofPrize = TempPrize;
+                    return;
+                }
+
+                var isTruth = CurrentDbModel.Answers.FirstOrDefault().Equals(questions.ToArray()[result - 1]);
+
+                if (isTruth)
+                {
+                    TempPrize = SwitchHelper.GetPrizeSum(CurrentStep);
+                    Quiz.TrueAnswer.ToConsole();
+                }
+                else
+                {
+                    string.Format(Templates.TrueAnswerTemplate, CurrentDbModel.Answers.FirstOrDefault()).ToConsole();
+                    return;
+                }
+
+                if (isTruth && CurrentStep == 15)
+                {
+                    FireproofPrize = TempPrize = SwitchHelper.GetPrizeSum(CurrentStep);
+                    Quiz.Winner.ToConsole();
+                }
+
+
             }
         }
 
@@ -126,7 +125,8 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
                     break;
             }
 
-            _listQuestions.Add(result.question);
+            _listQuestions.Add(result.dbModel.Data.FirstOrDefault()?.Answers.FirstOrDefault());
+
 
             return result.dbModel.Data?.FirstOrDefault();
         }
@@ -135,7 +135,7 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
         {
             var dbModel = await GetQuestion(level);
             var question = dbModel.Data?.FirstOrDefault()?.Question;
-            if (_listQuestions.Exists(_ => _.Equals(question)))
+            if (_listQuestions.Exists(_ => dbModel.Data.FirstOrDefault().Answers.FirstOrDefault().Equals(_)))
                 return await GetTupleQuestion(level);
 
             return (dbModel, question);
