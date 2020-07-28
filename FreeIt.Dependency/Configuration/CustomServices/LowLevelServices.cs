@@ -16,6 +16,7 @@ namespace FreeIt.Dependency.Configuration.CustomServices
                 .AddScoped<ISecondWeekService, SecondWeekService>()
                 .AddScoped<IThirdWeekService, ThirdWeekService>()
                 .AddScoped<INewThirdWeekService, NewThirdWeekService>()
-                .AddScoped<IFourthWeekService, FourthWeekService>();
+                .AddScoped<IFourthWeekService, FourthWeekService>()
+                .AddScoped<IGameService, GameService>();
     }
 }

@@ -1,11 +1,7 @@
 ﻿using FreeIt.Domain.Interfaces.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Threading;
 using FreeIt.Dependency.Configuration.IoC;
-using FreeIt.Domain.Common.Enums;
-using FreeIt.Domain.Common.Models.Requests.Millionaire;
-using FreeIt.Domain.Interfaces.Services.External;
 using System.Threading.Tasks;
 
 namespace FreeIt.LowLevel.FourthWeek
