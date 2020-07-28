@@ -1,4 +1,6 @@
-﻿namespace FreeIt.Domain.Interfaces.Common
+﻿using System.Threading.Tasks;
+
+namespace FreeIt.Domain.Interfaces.Common
 {
     public interface ILowLevelService
     {

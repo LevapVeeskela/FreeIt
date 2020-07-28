@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="Models\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Models\Dto\" />
   </ItemGroup>
 
 </Project>

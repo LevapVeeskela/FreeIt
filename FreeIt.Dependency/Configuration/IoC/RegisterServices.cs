@@ -1,4 +1,5 @@
 ﻿using FreeIt.Dependency.Configuration.CustomServices;
+using FreeIt.Dependency.Configuration.External;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FreeIt.Dependency.Configuration.IoC
@@ -7,6 +8,7 @@ namespace FreeIt.Dependency.Configuration.IoC
     {
         public static IServiceCollection RegisterServices(this IServiceCollection services)
             => services
-                .RegisterLowLevelServices();
+                .RegisterLowLevelServices()
+                .RegisterExternalServices();
     }
 }

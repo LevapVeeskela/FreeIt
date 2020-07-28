@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="marvin.streamextensions" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FreeIt.Domain.Common\FreeIt.Domain.Common.csproj" />
     <ProjectReference Include="..\FreeIt.Domain.Interfaces\FreeIt.Domain.Interfaces.csproj" />
     <ProjectReference Include="..\FreeIt.Infrastructure.Interfaces\FreeIt.Infrastructure.Interfaces.csproj" />
