@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Text;
 using FreeIt.Domain.Common.Enums;
 using FreeIt.Domain.Common.Extensions;
 using FreeIt.Domain.Common.Helpers;
@@ -65,13 +64,14 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
         {
             for (var currentStep = 0; currentStep < _listQuestions.Count; currentStep++)
             {
-                new string('-', 100).ToConsole();⁣
+                new string('-', 100).ToConsole();
+
                 string.Format(Templates.NumberQuestionTemplate, currentStep + 1).ToConsole();
 
                 CurrentDbModel = _listQuestions[currentStep];
 
-                CurrentDbModel.Question.ToConsole();
-                    ⁣
+                new string(CurrentDbModel.Question.Where(c => char.IsLetterOrDigit(c) || char.IsSeparator(c) || char.IsPunctuation(c)).ToArray()).ToConsole();
+
                 var questions = CurrentDbModel.Answers.ToList().Mixing();
 
                 UpdateFireproofPrize(currentStep);
