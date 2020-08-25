@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
 using FreeIt.Domain.Common.Enums;
 using FreeIt.Domain.Common.Extensions;
 using FreeIt.Domain.Common.Helpers;
 using FreeIt.Domain.Common.Models.Db;
 using FreeIt.Domain.Common.Models.Requests.Millionaire;
-using FreeIt.Domain.Common.Models.Responses.Millionaire;
 using FreeIt.Domain.Interfaces.Services;
 using FreeIt.Domain.Interfaces.Services.External;
 using static FreeIt.Domain.Common.Constants.Constants;
@@ -18,14 +17,9 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
 {
     public class GameService : IGameService
     {
-        /// <summary>
-        /// Так как Api отдаёт рандомные вопросы, есть шанс получить предыдущий
-        /// </summary>
-        private List<string> _listQuestions;
-
         private readonly IMillionaireClient _millionaireClient;
 
-        private int CurrentStep { get; set; }
+        private List<QuestionDataDbModel> _listQuestions;
 
         private int TempPrize { get; set; }
 
@@ -33,119 +27,97 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
 
         private QuestionDataDbModel CurrentDbModel { get; set; }
 
-        public GameService(IMillionaireClient millionaireClients)
-        {
-            _millionaireClient = millionaireClients;
-            DefaultValue();
-        }
-
-        private void DefaultValue()
-        {
-            FireproofPrize = 0;
-            CurrentStep = 1;
-            _listQuestions = new List<string>();
-        }
-
         public int FireproofPrize { get; set; }
 
-        public async Task StartGame()
+        public GameService(IMillionaireClient millionaireClients)
+            => _millionaireClient = millionaireClients;
+
+        public async Task StartGameAsync()
         {
-            DefaultValue();
+            await PrepareQuizAsync();
 
             Name = Quiz.Welcome.GetValueFromConsole();
             string.Format(Templates.FirstWelcomeTemplate, Name).ToConsole();
             string.Format(Templates.SecondWelcomeTemplate, Name).ToConsole();
 
-            await AskQuestions();
+            AskQuestions();
         }
 
-        private async Task AskQuestions()
+        private async Task PrepareQuizAsync()
         {
-            for (CurrentStep = 1; CurrentStep <= 15; CurrentStep++)
-            {
-                CurrentDbModel = await GetReadyQuestion(CurrentStep);
+            FireproofPrize = 0;
+            _listQuestions = new List<QuestionDataDbModel>();
 
-                new string('-', 100).ToConsole();
-                string.Format(Templates.NumberQuestionTemplate, CurrentStep).ToConsole();
+            foreach (int complexity in Enum.GetValues(typeof(LevelDifficulty)))
+            {
+                var response = await _millionaireClient.GetAsync(new GetQuestionRequest
+                {
+                    QType = (LevelDifficulty)complexity,
+                    Count = 5 //Количество вопросов(в пределах от 1 до 5), более 5 платно и нужен ключ
+                }, new CancellationToken());
+
+                if (response.Ok)
+                    _listQuestions.AddRange(response.Data);
+            }
+        }
+
+        private void AskQuestions()
+        {
+            for (var currentStep = 0; currentStep < _listQuestions.Count; currentStep++)
+            {
+                new string('-', 100).ToConsole();⁣
+                string.Format(Templates.NumberQuestionTemplate, currentStep + 1).ToConsole();
+
+                CurrentDbModel = _listQuestions[currentStep];
 
                 CurrentDbModel.Question.ToConsole();
+                    ⁣
                 var questions = CurrentDbModel.Answers.ToList().Mixing();
-                var hisAnswer = String.Join(", ", questions.Select((_, index) => $"{index + 1}. {_}"))
-                    .GetValueFromConsole();
 
-                if (CurrentStep == 5 || CurrentStep == 10)
-                {
-                    FireproofPrize = SwitchHelper.GetPrizeSum(CurrentStep);
-                    string.Format(Templates.FireproofPrizeTemplate, FireproofPrize).ToConsole();
-                }
+                UpdateFireproofPrize(currentStep);
 
-                if (int.TryParse(hisAnswer, out var result) && result == 5)
+                if (int.TryParse(GetAnswer(questions), out var result) && result == Quiz.ExitNumber)
                 {
                     FireproofPrize = TempPrize;
                     return;
                 }
 
-                var isTruth = CurrentDbModel.Answers.FirstOrDefault().Equals(questions.ToArray()[result - 1]);
-
-                if (isTruth)
-                {
-                    TempPrize = SwitchHelper.GetPrizeSum(CurrentStep);
-                    Quiz.TrueAnswer.ToConsole();
-                }
-                else
-                {
-                    string.Format(Templates.TrueAnswerTemplate, CurrentDbModel.Answers.FirstOrDefault()).ToConsole();
+                if (!CheckAnswer(questions, result, currentStep))
                     return;
-                }
 
-                if (isTruth && CurrentStep == 15)
+                if (currentStep == _listQuestions.Count - 1)
                 {
-                    FireproofPrize = TempPrize = SwitchHelper.GetPrizeSum(CurrentStep);
+                    FireproofPrize = TempPrize = SwitchHelper.GetPrizeSum(currentStep);
                     Quiz.Winner.ToConsole();
                 }
-
-
             }
         }
 
-        private async Task<QuestionDataDbModel> GetReadyQuestion(int step = 1)
+        private void UpdateFireproofPrize(int currentStep)
         {
-            (MillionaireResponse dbModel, string question) result;
-
-            switch (step)
+            if (currentStep == Quiz.FirstFireproofPrize || currentStep == Quiz.SecondFireproofPrize)
             {
-                case int v when v >= 6 && v <= 10:
-                    result = await GetTupleQuestion(LevelDifficulty.Middle);
-                    break;
-                case int v when v >= 11 && v <= 15:
-                    result = await GetTupleQuestion(LevelDifficulty.Difficult);
-                    break;
-                default:
-                    result = await GetTupleQuestion(LevelDifficulty.Easy);
-                    break;
+                FireproofPrize = SwitchHelper.GetPrizeSum(currentStep);
+                string.Format(Templates.FireproofPrizeTemplate, FireproofPrize).ToConsole();
+            }
+        }
+
+        private string GetAnswer(List<string> questions) => string.Join(", ", questions.Select((_, index) => $"{index + 1}. {_}"))
+            .GetValueFromConsole();
+
+        private bool CheckAnswer(List<string> questions, int result, int currentStep)
+        {
+            var isTruth = CurrentDbModel.Answers.FirstOrDefault()?.Equals(questions.ToArray()[result - 1]);
+
+            if (isTruth != null && (bool)isTruth)
+            {
+                TempPrize = SwitchHelper.GetPrizeSum(currentStep);
+                Quiz.TrueAnswer.ToConsole();
+                return true;
             }
 
-            _listQuestions.Add(result.dbModel.Data.FirstOrDefault()?.Answers.FirstOrDefault());
-
-
-            return result.dbModel.Data?.FirstOrDefault();
+            string.Format(Templates.TrueAnswerTemplate, CurrentDbModel.Answers.FirstOrDefault()).ToConsole();
+            return false;
         }
-
-        private async Task<(MillionaireResponse dbModel, string question)> GetTupleQuestion(LevelDifficulty level)
-        {
-            var dbModel = await GetQuestion(level);
-            var question = dbModel.Data?.FirstOrDefault()?.Question;
-            if (_listQuestions.Exists(_ => dbModel.Data.FirstOrDefault().Answers.FirstOrDefault().Equals(_)))
-                return await GetTupleQuestion(level);
-
-            return (dbModel, question);
-        }
-
-        private async Task<MillionaireResponse> GetQuestion(LevelDifficulty level)
-            => await _millionaireClient.GetAsync(new GetQuestionRequest
-            {
-                QType = level,
-                Count = 1
-            }, new CancellationToken());
     }
 }

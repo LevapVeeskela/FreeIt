@@ -40,6 +40,9 @@ namespace FreeIt.Domain.Common.Constants
             public const string Welcome = "Представьтесь, пожалуйста))";
             public const string TrueAnswer = "И это правильный ответ!";
             public const string Winner = "И у нас есть победитель, новоиспечённый миллионер!";
+            public const int FirstFireproofPrize = 4;
+            public const int SecondFireproofPrize = 9;
+            public const int ExitNumber = 5;
         }
         #endregion
 

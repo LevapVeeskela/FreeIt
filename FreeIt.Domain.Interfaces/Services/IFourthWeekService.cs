@@ -4,6 +4,6 @@ namespace FreeIt.Domain.Interfaces.Services
 {
     public interface IFourthWeekService
     {
-        Task Process();
+        Task ProcessAsync();
     }
 }
