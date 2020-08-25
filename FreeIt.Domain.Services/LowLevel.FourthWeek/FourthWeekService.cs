@@ -12,9 +12,9 @@ namespace FreeIt.Domain.Services.LowLevel.FourthWeek
         public FourthWeekService(IGameService gameService)
             => _gameService = gameService;
 
-        public async Task Process()
+        public async Task ProcessAsync()
         {
-            await _gameService.StartGame();
+            await _gameService.StartGameAsync();
             _gameService.FireproofPrize.ToConsole(Constants.Templates.WinnerPrizeTemplate);
         }
     }

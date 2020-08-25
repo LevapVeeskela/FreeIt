@@ -4,7 +4,7 @@
     {
         Easy = 1,
         Middle,
-        Difficult,
-        Child
+        Difficult
+        //Child 
     }
 }
