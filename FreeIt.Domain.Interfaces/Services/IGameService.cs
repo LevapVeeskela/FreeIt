@@ -6,6 +6,6 @@ namespace FreeIt.Domain.Interfaces.Services
     {
         int FireproofPrize { get; set; }
 
-        Task StartGame();
+        Task StartGameAsync();
     }
 }

@@ -11,15 +11,15 @@ namespace FreeIt.LowLevel.FourthWeek
         private static IServiceProvider _serviceProvider;
 
         static async Task Main(string[] args)
-            => await Execute();
+            => await ExecuteAsync();
 
-        static async Task Execute()
+        static async Task ExecuteAsync()
         {
             RegisterServices(new ServiceCollection());
 
             var service = _serviceProvider.GetService<IFourthWeekService>();
 
-            await service.Process();
+            await service.ProcessAsync();
 
             Console.ReadKey();
 
