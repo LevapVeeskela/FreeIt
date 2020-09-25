@@ -13,7 +13,7 @@ namespace FreeIt.Domain.Common.Models.Db
         /// Список из 4 вариантов ответа. Верный ответ указан первым в списке.
         /// Варианты ответа не перемешиваются.
         /// </summary>
-        public IEnumerable<string> Answers { get; set; }
+        public IList<string> Answers { get; set; } = new List<string>();
 
         /// <summary>
         /// Техническое поле, всегда равняется "0".
